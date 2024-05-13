@@ -32,4 +32,7 @@ export const charmander: Pokemon = {
 
 }
 
-console.log(Bulbasaur);
+export const pokemons: Pokemon[] = []
+pokemons.push(charmander, Bulbasaur)
+
+console.log(pokemons);

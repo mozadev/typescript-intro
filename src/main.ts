@@ -3,7 +3,7 @@ import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
 import { name, age } from './bases/01-types.ts'
-import { Bulbasaur } from './bases/02-objects.ts'
+import { Bulbasaur, pokemons } from './bases/02-objects.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -18,7 +18,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <button id="counter" type="button"></button>
     </div>
     <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more ${Bulbasaur.name} ${age}!!!
+      Click on the Vite and TypeScript logos to learn more ${pokemons.join(',')} ${age}!!!
     </p>
   </div>
   
