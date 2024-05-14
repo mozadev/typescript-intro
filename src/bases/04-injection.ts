@@ -5,7 +5,7 @@
 //    public name: string;
 
 import { Move, PokeapiResponse } from "../interfaces/pokeapi-response.interface"
-import { PokeApiAdapter } from "../api/pokeApi.adapter"
+import { PokeApiAdapter, PokeApiFetchAdapter } from "../api/pokeApi.adapter"
 
 
 //    constructor(id: number, name: string) {
@@ -32,7 +32,7 @@ export class Pokemon {
       public name: string,
       // public imageUrl: string
       // Todo : dependency injection
-        private readonly http: PokeApiAdapter      
+        private readonly http: PokeApiAdapter    
 
    ) { }
    scream() {
@@ -53,14 +53,15 @@ export class Pokemon {
       // destructuring
       // const {data} = await axios.get<PokeapiResponse>(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
     //   const { data } = await axios.get<PokeapiResponse>('https://pokeapi.co/api/v2/pokemon/4');
-    const data = await this.http.get('https://pokeapi.co/api/v2/pokemon/4');
+    const data = await this.http.get<PokeapiResponse>('https://pokeapi.co/api/v2/pokemon/4');
     console.log(data.moves);
       return data.moves;
    }
 }
 
-const pokeApi = new PokeApiAdapter();
-export const bulbasaur = new Pokemon(1, 'Bulbasaurname', pokeApi)
+const pokeApiAxios = new PokeApiAdapter();
+const pokeApiFetch = new PokeApiFetchAdapter();
+export const bulbasaur = new Pokemon(1, 'Bulbasaurname', pokeApiAxios, pokeApiFetch)
 // bulbasaur.id = 2
 // bulbasaur.name = 'Bulbasaurfdsfs'
 
