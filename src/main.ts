@@ -7,7 +7,8 @@ import { setupCounter } from './counter.ts'
 // import { name, age } from './bases/01-types.ts'
 // import { Bulbasaur, pokemons } from './bases/02-objects.ts'
 
-import { charmander } from './bases/05-decorators.ts'
+// import { charmander } from './bases/05-decorators.ts'
+import { charmander } from './bases/06-decorators2.ts'
 
 
 
