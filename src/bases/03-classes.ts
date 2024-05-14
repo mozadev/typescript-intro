@@ -47,7 +47,7 @@ export class Pokemon {
 
       // return resp.data.moves;
       // destructuring
-      const {data} = await axios.get(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
+      const {data} = await axios.get<string>(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
       console.log(data.moves);
       return data.moves;
    }
