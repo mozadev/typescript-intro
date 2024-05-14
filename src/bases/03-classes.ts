@@ -30,6 +30,14 @@ export class Pokemon {
       // public imageUrl: string
 
    ) { }
+   scream() {
+      console.log(`${this.name.toUpperCase()}!!!!`)
+      this.speak()
+   }
+
+   speak() {
+      console.log(`${this.name} ${this.name}...`)
+   }
 }
 
 
@@ -39,3 +47,5 @@ export const bulbasaur = new Pokemon(1, 'Bulbasaurname')
 // bulbasaur.name = 'Bulbasaurfdsfs'
 
 console.log(bulbasaur.imageUrl)
+bulbasaur.scream()
+bulbasaur.speak()
