@@ -5,7 +5,7 @@
 //    public name: string;
 
 import { Move, PokeapiResponse } from "../interfaces/pokeapi-response.interface"
-import { PokeApiAdapter, PokeApiFetchAdapter } from "../api/pokeApi.adapter"
+import { HttpAdapter, PokeApiAdapter, PokeApiFetchAdapter } from "../api/pokeApi.adapter"
 
 
 //    constructor(id: number, name: string) {
@@ -32,7 +32,7 @@ export class Pokemon {
       public name: string,
       // public imageUrl: string
       // Todo : dependency injection
-        private readonly http: PokeApiAdapter    
+        private readonly http: HttpAdapter      
 
    ) { }
    scream() {
@@ -61,7 +61,7 @@ export class Pokemon {
 
 const pokeApiAxios = new PokeApiAdapter();
 const pokeApiFetch = new PokeApiFetchAdapter();
-export const bulbasaur = new Pokemon(1, 'Bulbasaurname', pokeApiAxios, pokeApiFetch)
+export const bulbasaur = new Pokemon(1, 'Bulbasaurname', pokeApiFetch)
 // bulbasaur.id = 2
 // bulbasaur.name = 'Bulbasaurfdsfs'
 
