@@ -4,7 +4,8 @@
 //    public id: number;
 //    public name: string;
 
-import { charmander } from "./02-objects"
+import axios from "axios"
+
 
 //    constructor(id: number, name: string) {
 
@@ -38,6 +39,18 @@ export class Pokemon {
    speak() {
       console.log(`${this.name} ${this.name}...`)
    }
+
+   async getMoves() {
+      //const moves = 10;
+      // const resp = await axios.get('https://pokeapi.co/api/v2/pokemon/1')
+      // console.log(resp.data.moves);
+
+      // return resp.data.moves;
+      // destructuring
+      const {data} = await axios.get(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
+      console.log(data.moves);
+      return data.moves;
+   }
 }
 
 
@@ -46,6 +59,7 @@ export const bulbasaur = new Pokemon(1, 'Bulbasaurname')
 // bulbasaur.id = 2
 // bulbasaur.name = 'Bulbasaurfdsfs'
 
-console.log(bulbasaur.imageUrl)
-bulbasaur.scream()
-bulbasaur.speak()
+// bulbasaur.scream()
+// bulbasaur.speak()
+//console.log(bulbasaur.getMoves())
+bulbasaur.getMoves()
