@@ -18,14 +18,24 @@ import { charmander } from "./02-objects"
 // }
 
 export class Pokemon {
+
+
+   get imageUrl(): string {
+      return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.id}.png`
+   }
+
    constructor(
       public readonly id: number,
-      public name: string
+      public name: string,
+      // public imageUrl: string
+
    ) { }
 }
 
 
 export const bulbasaur = new Pokemon(1, 'Bulbasaurname')
 
-bulbasaur.id = 2
-bulbasaur.name = 'Bulbasaurfdsfs'
+// bulbasaur.id = 2
+// bulbasaur.name = 'Bulbasaurfdsfs'
+
+console.log(bulbasaur.imageUrl)
